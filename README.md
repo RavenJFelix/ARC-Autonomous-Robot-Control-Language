@@ -33,7 +33,7 @@ into the robot's respective language to be hardcoded into the program
 itself when fully developed for even higher performance. One could
 even link it with assembly or pure machine code(if desired of course),
 
-###Extensible
+### Extensible
 __ARC__ merely is a specification, it is designed to be expanded to suit
 the programmers needs.
 __Static Support:__ the language can be used to program a "robotic animation"

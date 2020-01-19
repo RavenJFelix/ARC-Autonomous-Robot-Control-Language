@@ -1,6 +1,6 @@
 Autonomous Robot Control Language
 =================================
-#Introduction
+# Introduction
 ARC is a specification language that is designed to be used for a
 variety of robots in a understandable manner. The language itself
 is not "definite" because each robot has it's own commands and whatnot.
@@ -106,7 +106,7 @@ called with a $ sign.
 ```
 STORE yeets 10
 MOVE $yeets ft
-
+```
 ### Comments
 Single line commands will be delimited with a semicolon(;), anything else after the
 semicolon in the line will be ignored.
@@ -141,6 +141,14 @@ more elegant with math formulae)
 Degrees will be denoted as $numberd i.e. 180d
 Radians will be denoted as $numberr i.e. 3.14r
 
+### Command Delimiter
+For ease of interpreting, the new-line character will determine
+the end of a command.
+
+### Error Detection
+To prevent bad things from happening, always have the program
+check for bad calls. Always...
+
 ## Core Commands and Examples
 
 ### STORE
@@ -163,8 +171,8 @@ Writes message to output screen
 ```
 PRINT "Yee Yee" ;used if there are spaces
 PRINT WOOF; shorter form
-PRINT "Bot says, \"Hi\"" ;escape characters(not require) to output delimiters
-
+PRINT "Bot says, \"Hi\"" ;escape characters(not required) to output delimiters
+```
 ### LOG
 LOG $message Abbreviation: L
 Writes message to log file
@@ -175,7 +183,7 @@ every spec is a guideline although it's not like the ARC code you write will be 
 on a vastly different robot.
 
 ### MOVE
-MOVE $distance \[$unit\] Abbreviation: M
+MOVE $distance \[$unit\] \[speed\] Abbreviation: M
 MOVE $direction $distance \[$unit\] Abbreviation: M
 Positive values move the Robot forward and
 Negative values move the Robot backward unless a direction is included
@@ -185,11 +193,15 @@ have been degrees from current position.
 
 The default unit will be milimeters(this is an example lmao)
 
+A default speed needs to be set as well.
 
 ```
 MOVE 10
 MOVE 100 mm
-MOVE 123d 100 mm ;move 100 millimeters 123 degrees counter-clockwise from north
+MOVE 123d 100 mm ;move 100 millimeters 123 degrees
+counter-clockwise from north. This syntax would be useful
+with robots that do not have to rotate to move i.e. leDronez.
+```
 ### ROTATE
 ROTATE $amount abbreviation: ROT, R
 
@@ -198,4 +210,23 @@ Rotates the robot amount of degrees clockwise from it's current position
 ## Simultaenous Execution
 In general, the computer will not move on into the next command
 until the previous command has been finished. Multiple commands
-can be executed at the same time 
+can be executed at the same time by appending a &.
+```
+MOVE 100 mm &
+ROT 120d 
+
+## FORcing time
+when the FOR statement is appended to a command, a duration can be
+set if needed.
+```
+MOVE 10 ft FOR 10 s
+MOVE 1000 ft FOR 1 s ; this will likely be rejected by the program
+; or "clamped" to a safe value by the programmer or robot api. 
+; if not, prepare for explosions and the speed of sound being broken.
+```
+
+## AT statements
+I forgot what at statements were supposed to do, I head the idea just a few
+hours ago oof. It was similar to FOR statements
+
+
