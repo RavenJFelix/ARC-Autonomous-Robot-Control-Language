@@ -5,8 +5,8 @@ Fast Flexible Exentensible Accessible
 __ARC-Language__ or simply __ARC__ is a simplified control language
 for Robotic programming.
 
-This language was concieved initially by Raven Jyro Felix for the
-problem of programming for robotics.
+This language was concieved to solve the
+problem of the difficulty of programming for autonomous robotics.
 
 ## Purpose
 __ARC__ is designed to make the task of programming autonomous robotics
