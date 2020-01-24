@@ -15,7 +15,7 @@ namespace utilities
 			if(frontPos == std::string::npos)
 				break;
 			outputList.push_back(src.substr(backPos, frontPos - backPos));
-			backPos = frontPos;
+			backPos = frontPos + 1;
 		}
 		return outputList;
 	}
