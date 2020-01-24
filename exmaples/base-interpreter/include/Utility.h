@@ -5,6 +5,6 @@
 
 namespace utilities
 {
-	std::vector<std::string> explode(std::string &src);
+	std::vector<std::string> explode(std::string &src, char delimeter);
 }
 #endif
