@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION  3.16 FATAL_ERROR)
 
 set(dir_src
+	Utility.cpp
 	)
 
-list(TRANSFORM src_src APPEND ${CMAKE_CURRENT_SOURCE_DIR}/)
+list(TRANSFORM dir_src PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 set(sources
 	${sources}

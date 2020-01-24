@@ -8,6 +8,7 @@ set(headers)
 add_subdirectory(src)
 add_subdirectory(include)
 
-message(STATUS ${soureces}
-add_executable(${PROJECT_NAME} ${sources} ${headers})
-target_link_libraries(${PROJECT_NAME} PUBLIC include)
+message(STATUS ${headers})
+add_executable(${PROJECT_NAME} ${headers} ${sources} )
+
+target_include_directories(${PROJECT_NAME} PUBLIC include)

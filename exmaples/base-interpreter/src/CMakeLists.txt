@@ -8,5 +8,5 @@ list(TRANSFORM dir_src PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 set(sources
 	${sources}
-	dir_src
+	${dir_src}
 	PARENT_SCOPE)
